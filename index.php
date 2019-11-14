@@ -1,3 +1,6 @@
+<?php
+   include('https://joezeng.000webhostapp.com/session.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,6 +16,7 @@
 			</div>
 			<div id="menu">
 				<ul>
+					<li class="login"><?php echo $login_session; ?></li>
 					<li class="login"><a href="login.html">Log in</a></li>
 					<li><a href="../music/">Music</a></li>
 					<li><a href="index.html#contact">Contact</a></li>
