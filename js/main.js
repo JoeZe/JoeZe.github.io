@@ -1,3 +1,39 @@
+function validateForm() {
+  var password = document.form.password.value;
+  var confirm_password = document.form.confirm_password.value;
+  if (password != confirm_password) {
+    alert("Password must be same!");
+    return false;
+  }
+}
+
+function showUser(){
+/*	var objXMLHttpRequest = new XMLHttpRequest();
+	objXMLHttpRequest.onreadystatechange = function() {
+	  if(objXMLHttpRequest.readyState === 4) {
+		if(objXMLHttpRequest.status === 200) {
+			 // alert(objXMLHttpRequest.responseText);
+			  document.getElementById("username").innerHTML = this.responseText;
+		} 
+	  }
+	}
+	objXMLHttpRequest.open('GET', 'https://joezeng.000webhostapp.com/welcome.php', true);
+	objXMLHttpRequest.send();
+	*/
+	$.ajax({
+		url:'https://joezeng.000webhostapp.com/welcome.php',
+		type: 'GET',
+		dataType: 'json',
+		success: function(res){
+			console.log(res);
+			alert(res);
+		}
+	});
+}
+
+$(document).ready(function(){
+ setInterval(showUser,5000);
+});
 
 (function ($) {
     "use strict";
@@ -84,6 +120,8 @@
         }
         
     });
+	
+	
 
 
 })(jQuery);
